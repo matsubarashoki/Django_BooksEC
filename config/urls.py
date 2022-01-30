@@ -6,5 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #index
-    path('', views.IndexView.as_view())
+    path('', views.IndexView.as_view()),
+    path('book/<str:pk>', views.BooksDetailView.as_view())
+
 ]

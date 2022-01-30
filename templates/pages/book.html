@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block main %}
+
+<div class="container">
+    <div class="row my-5">
+        <!-- 写真 -->
+        <div class="col-12 col-lg-6">
+            <div class="bg-white border overflow-hidden">
+                <img src="/{{ object.image }} " width="100%">
+            </div>
+        </div>
+        <!-- 商品情報 -->
+        <div class="col-12 col-lg-6">
+            <div class="border p-3 text-left text-dark overflow-hidden">
+                <h2 class="display-5">{{ object.name}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
