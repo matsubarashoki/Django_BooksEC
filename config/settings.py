@@ -111,3 +111,9 @@ STATICFILES_DIRS = [BASE_DIR / 'static'] #追記
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TAXRATE = 0.1
+
+STRIPE_API_SECRET_KEY = env.str('STRIPE_API_SECRET_KEY')
+
+MY_URL = env.str('MY_URL')

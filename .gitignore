@@ -168,3 +168,5 @@ cython_debug/
 
 secrets
 memo.txt
+
+static/images/*

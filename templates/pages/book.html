@@ -12,10 +12,32 @@
         <div class="col-12 col-lg-6">
             <div class="border p-3 text-left text-dark overflow-hidden">
                 <h2 class="display-5">{{ object.name}}</h2>
+                <p class="lead">
+                    <a href="/categories/{{object.category.slug}}/" class="badge badge-pill badge-warning">{{object.category.name}}</a>
+                    <!-- object.tabs.all　この形式でManyToManyが取れるんやな -->
+                    {% for tag in object.tags.all %}
+                    <a href="/tags/{{tag.slug}}/" class="badge badge-pill badge-light">#{{tag}}</a> {% endfor %}
+                </p>
+                <p class="lead">著者：{{object.auther}}</p>
+                <p class="lead">出版社：{{object.publisher}}</p>
+                <p class="lead">\{{object.price}}(税別)</p>
+                <p class="lead">{{object.description}}</p>
+                <form action="/cart/add/" method="POST" class="">
+                    {% csrf_token %}
+                    <input type="hidden" name="book_pk" value="{{object.pk}}">
+                    <p>
+                        <input type="number" class="form-control d-inline w-25" name="quantity" value="1" max="{{object.stock}}">点
+                    </p>
+                    <p>
+                        {% if object.stock == 0 %}
+                        <button type="submit" class="btn btn-warning" disabled> 売り切れ</button> {% else %}
+                        <button type="submit" class="btn btn-success"> カートに追加</button> {% endif %}
+                    </p>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
 
-{% endblock %}
+    {% endblock %}

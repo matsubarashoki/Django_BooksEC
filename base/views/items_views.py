@@ -1,6 +1,6 @@
 from django.views.generic import ListView, View , DetailView
 
-from base.models.books_models import Books
+from base.models import Books
 
 
 class IndexView(ListView):
