@@ -117,3 +117,12 @@ TAXRATE = 0.1
 STRIPE_API_SECRET_KEY = env.str('STRIPE_API_SECRET_KEY')
 
 MY_URL = env.str('MY_URL')
+
+#CustomeUser使用設定
+AUTH_USER_MODEL = 'base.User'
+
+#URLパス
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL= '/logout/'
+LOGOUT_REDIRECT_URL = '/login/'
