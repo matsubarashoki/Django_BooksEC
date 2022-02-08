@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from base.models import Profile, User,Books, Category, Tag
 from base.forms import UserCreationForm
-from base.models.order_models import Order
+# from base.models.order_models import Order
 
 #TabularInline 表形式のインライン
 class TagInline(admin.TabularInline):
@@ -40,4 +40,4 @@ admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(Books, BooksAdmin)
 admin.site.register(User, CustomeUserAdmin)
-admin.site.register(Order)
+# admin.site.register(Order)
